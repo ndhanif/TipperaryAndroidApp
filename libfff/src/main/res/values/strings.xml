@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Libfff</string>
+    <string name="actions">Actions</string>
+    <string name="notification">Notification</string>
+    <string name="enable">Enable</string>
+    <string name="enable_notificaion">Enable notification</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+
+    <string-array name="en">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+</resources>

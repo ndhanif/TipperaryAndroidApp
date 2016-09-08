@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
+        android:layout_below="@+id/slider"
+        android:background="#ffffff"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false" />
+
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider"
+        android:layout_width="fill_parent"
+        custom:pager_animation="Accordion"
+        custom:auto_cycle="true"
+        custom:indicator_visibility="visible"
+        custom:pager_animation_span="1100"
+        android:layout_height="154dp"
+        android:background="#ffffff" />
+
+
+</RelativeLayout>

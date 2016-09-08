@@ -1,0 +1,40 @@
+Feed from the field android library
+
+* minSdkVersion 9
+* targetSdkVersion 23
+
+
+** Follow the steps bellow to implement this library **
+
+1) Open your project(Android Studio IDEA)
+2) Unzip it and paste inside your project(main folder)
+3) Open the file called 'settings.gradle'(main folder) and add this include....
+
+    ':libfff'
+
+Your 'settings.gradle' should be like....
+
+    include ':app', ':libfff'
+
+4) Sync project(tap on gradle icon above or just tap on the message that the Android Studio will open)
+5) Open the file build.gradle into your 'app' folder and add this line into dependencies.....
+
+    compile project(':libfff')
+
+6) Repeat the step 4.
+7) Now you should be able to use our fragment and notification system.
+8) First, to enable the notification system. Please, add these lines into your main activity.....
+
+         try {
+            String result = new FFFUtil().registerDevice(this,getString(R.string.app_name));
+            Log.i("fff", "result = " + result);
+            }catch (Exception e){
+              Log.i("fff", e.getMessage());
+            }
+
+
+
+
+*** Issues ***
+
+You may want to change the notification icon logo in GCMNotificationIntentService class
