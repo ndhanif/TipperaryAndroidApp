@@ -1,7 +1,6 @@
 package ienquire.tiprearry;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +66,7 @@ public class ListViewAdapter extends ArrayAdapter<Item> {
         holder.tt1.setText(p.getTitle());
         holder.tt12.setText(p.getDetails());
 
-        Log.i("fff", "getView: image = " + p.getImage());
+        //Log.i("fff", "getView: image = " + p.getImage());
 
         //load image directly
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,10 @@ import com.daimajia.slider.library.SliderTypes.TextSliderView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import ienquire.ie.libfff.model.Clip;
+import ienquire.ie.libfff.util.FFFUtil;
 
 
 /**
@@ -72,6 +77,7 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
         listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Seamus4.mp4",icon));
 
         listOfItem.add(new Item("Tippreary VS Killkenny","Good Goal","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/gaol9.mp4",icon));
+        listOfItem.addAll(getNotifications());
 
 
 //        listOfItem.add(new Item("Tippreary VS Killkenny","Good Goal","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/goal1.mp4",icon));
@@ -200,6 +206,20 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
         Intent intent = new Intent(this.getContext(), ClipActivity.class);
         intent.putExtra("clip", clip.getUrl());
         startActivity(intent);
+    }
+
+    private List<Item> getNotifications() {
+        Drawable icon = ContextCompat.getDrawable(getActivity(), R.drawable.tipp);
+        List<Item> items = new ArrayList<>();
+        List<Clip> clips = FFFUtil.returnListOfClips(getActivity());
+
+        for (Clip clip : clips) {
+            if (clip.getCategory().equals("Points")) {
+                items.add(new Item("Feed", clip.getMessage(), clip.getUrl(), icon));
+            }
+        }
+
+        return items;
     }
 
     @Override
