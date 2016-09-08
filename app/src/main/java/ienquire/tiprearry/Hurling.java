@@ -16,8 +16,6 @@ import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +28,7 @@ public class Hurling extends Fragment implements AdapterView.OnItemClickListener
 
     SliderLayout mDemoSlider;
     ListView list;
-    Tracker mytracker;
+    // Tracker mytracker;
 
 
     public Hurling() {
@@ -46,11 +44,7 @@ public class Hurling extends Fragment implements AdapterView.OnItemClickListener
         list = (ListView) root.findViewById(R.id.listView);
 
 
-
-
-
         Drawable icon = this.getResources().getDrawable(R.drawable.tipp);
-
 
 
         ArrayList<Item> listOfItem = new ArrayList<>();
@@ -58,9 +52,7 @@ public class Hurling extends Fragment implements AdapterView.OnItemClickListener
         list.setAdapter(listViewAdapter);
 
 
-
-
-         listOfItem.add(new Item("Tippreary VS Killkenny","Good Goal","https://s3-eu-west-1.amazonaws.com/hurlling/Hurling+final+tippr+vs+killk/goal2withslow.mp4",icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", "Good Goal", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/goal2withslow.mp4", icon));
 
 //        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal1.mp4",icon));
 //
@@ -145,20 +137,20 @@ public class Hurling extends Fragment implements AdapterView.OnItemClickListener
 
         // Set title bar
         ((MainActivity) getActivity()).setActionBarTitle("Super Hurling");
-        mytracker.setScreenName("Screen Name is" + "Super Hurling");
-        mytracker.send(new HitBuilders.ScreenViewBuilder().build());
+//        mytracker.setScreenName("Screen Name is" + "Super Hurling");
+//        mytracker.send(new HitBuilders.ScreenViewBuilder().build());
 
     }
 
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
-        mytracker = application.getDefaultTracker();
-
-
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//
+//        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
+//        mytracker = application.getDefaultTracker();
+//
+//
+//    }
 
 }

@@ -16,8 +16,6 @@ import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +28,7 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
 
     SliderLayout mDemoSlider;
     ListView list;
-    Tracker mytracker;
+    //Tracker mytracker;
 
 
     public Points() {
@@ -210,19 +208,19 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
 
         // Set title on Actionbar
         ((MainActivity) getActivity()).setActionBarTitle("Points");
-        mytracker.setScreenName("Screen Name is" + "Points");
-        mytracker.send(new HitBuilders.ScreenViewBuilder().build());
+        //mytracker.setScreenName("Screen Name is" + "Points");
+        //mytracker.send(new HitBuilders.ScreenViewBuilder().build());
 
     }
 
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
-        mytracker = application.getDefaultTracker();
-
-
-    }
+//
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//
+//        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
+//        mytracker = application.getDefaultTracker();
+//
+//
+//    }
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +17,13 @@ import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import ienquire.ie.libfff.model.Clip;
+import ienquire.ie.libfff.util.FFFUtil;
 
 
 /**
@@ -30,7 +33,7 @@ public class Goals extends Fragment implements AdapterView.OnItemClickListener{
 
     SliderLayout mDemoSlider;
     ListView list;
-    Tracker mytracker;
+    //Tracker mytracker;
 
     public Goals() {
         // Required empty public constructor
@@ -89,8 +92,7 @@ public class Goals extends Fragment implements AdapterView.OnItemClickListener{
 //        listOfItem.add(new Item("Tippreary","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/SeamusCallanan7.mp4",icon));
 
         listOfItem.add(new Item("Tippreary VS Killkenny","Noel Mc Grath","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/NoelMcGrath.mp4",icon));
-
-
+        listOfItem.addAll(getNotifications());
         list.setOnItemClickListener(this);
 
 
@@ -147,25 +149,41 @@ public class Goals extends Fragment implements AdapterView.OnItemClickListener{
         startActivity(intent);
 
     }
+
+    private List<Item> getNotifications() {
+        Drawable icon = ContextCompat.getDrawable(getActivity(), R.drawable.tipp);
+        List<Item> items = new ArrayList<>();
+        List<Clip> clips = FFFUtil.returnListOfClips(getActivity());
+
+        for (Clip clip : clips) {
+            if (clip.getCategory().equals("Goals")) {
+                items.add(new Item("Feed", clip.getMessage(), clip.getUrl(), icon));
+            }
+        }
+
+        return items;
+    }
+
+
     @Override
     public void onResume(){
         super.onResume();
 
         // Set title bar
         ((MainActivity) getActivity()).setActionBarTitle("Goals");
-        mytracker.setScreenName("Screen Name is" + "Goals");
-        mytracker.send(new HitBuilders.ScreenViewBuilder().build());
+//        mytracker.setScreenName("Screen Name is" + "Goals");
+//        mytracker.send(new HitBuilders.ScreenViewBuilder().build());
 
     }
 
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
-        mytracker = application.getDefaultTracker();
-
-
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//
+//        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
+//        mytracker = application.getDefaultTracker();
+//
+//
+//    }
 }

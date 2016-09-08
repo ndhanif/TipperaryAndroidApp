@@ -9,9 +9,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+
+import ienquire.ie.libfff.util.FFFUtil;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +38,12 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+        try {
+            String result = new FFFUtil().registerDevice(this, getString(R.string.app_name));
+            Log.i("fff", "result = " + result);
+        } catch (Exception e) {
+            Log.i("fff", e.getMessage());
+        }
 
         fragment = new WelcomeFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
