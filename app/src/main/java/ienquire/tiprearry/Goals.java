@@ -92,6 +92,8 @@ public class Goals extends Fragment implements AdapterView.OnItemClickListener{
 //        listOfItem.add(new Item("Tippreary","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/SeamusCallanan7.mp4",icon));
 
         listOfItem.add(new Item("Tippreary VS Killkenny","Noel Mc Grath","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/NoelMcGrath.mp4",icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", "Noel Mc Grath", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/NoelMcGrath.mp4", icon));
+
         listOfItem.addAll(getNotifications());
         list.setOnItemClickListener(this);
 

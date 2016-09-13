@@ -57,42 +57,16 @@ public class Hurling extends Fragment implements AdapterView.OnItemClickListener
         list.setAdapter(listViewAdapter);
 
 
-        listOfItem.add(new Item("Tippreary VS Killkenny", "Good Goal", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/goal2withslow.mp4", icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", "Super cut from John O’Dwyer", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/goal2withslow.mp4", icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", "Awesome Brendan Cummins", "https://s3-eu-west-1.amazonaws.com/ienquirevideos/hurling+final+tipp+vs+galwy/Awesome+Brendan+Cummins.mp4", icon));
+        listOfItem.add(new Item("Tipperary Vs Clare", "Super save", "https://s3-eu-west-1.amazonaws.com/ienquirevideos/Tipperary+Vs+Clare/super+save.mp4", icon));
         listOfItem.addAll(getNotifications());
-
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal1.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal10.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal11.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal12.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal13.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal2.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal3.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal4.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal5.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal6.mp4",icon));
-//
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal7.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal8.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary VS Galway","Good Goal","https://s3-eu-west-1.amazonaws.com/gaagoals/Galway+vs+Tipprary/goal9.mp4",icon));
 
         list.setOnItemClickListener(this);
 
         HashMap<String,String> url_maps = new HashMap<String, String>();
         url_maps.put("Hurling1", "http://kclrfanzone.com/wp-content/uploads/2016/05/hurlpen.jpg");
         url_maps.put("Hurling2", "http://m0.sportsjoe.ie/wp-content/uploads/2015/03/02104218/hurling.jpg");
-
 
 
         for(String name : url_maps.keySet()){
@@ -106,8 +80,7 @@ public class Hurling extends Fragment implements AdapterView.OnItemClickListener
 
             //add your extra information
             textSliderView.bundle(new Bundle());
-            textSliderView.getBundle()
-                    .putString("extra",name);
+            textSliderView.getBundle().putString("extra", name);
 
             mDemoSlider.addSlider(textSliderView);
 

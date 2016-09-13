@@ -68,9 +68,8 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
 
         listOfItem.add(new Item("Tippreary VS Killkenny","Jhon O'Dwyer","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JohnODwyer1.mp4",icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Json Forde","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JasonForde2.mp4",icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", "Jason Forde", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JasonForde2.mp4", icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Noel Mc Grath","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/NoelMcGrath.mp4",icon));
 
         listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Seamus2.mp4",icon));
         listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/seamus3.mp4",icon));
