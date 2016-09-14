@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,8 +100,6 @@ public class Hurling extends Fragment implements AdapterView.OnItemClickListener
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-        Log.i("app", "onItemClick onimte ");
         Item clip = (Item) adapterView.getAdapter().getItem(i);
         Intent intent = new Intent(this.getContext(), ClipActivity.class);
         intent.putExtra("clip", clip.getUrl());

@@ -62,11 +62,11 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
         listOfItem.add(new Item("Tippreary VS Killkenny","Patrick 'Bonnar' Maher","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/BonnarMehar1.mp4",icon));
 
 
-        listOfItem.add(new Item("Tippreary VS Killkenny"," Jhon 'Bubbles' O'Dwyer","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Bubbles.mp4",icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", " John 'Bubbles' O'Dwyer", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Bubbles.mp4", icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/SeamusCallanan1.mp4",icon));
+        //listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/SeamusCallanan1.mp4",icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Jhon O'Dwyer","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JohnODwyer1.mp4",icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", "John O'Dwyer", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JohnODwyer1.mp4", icon));
 
         listOfItem.add(new Item("Tippreary VS Killkenny", "Jason Forde", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JasonForde2.mp4", icon));
 
@@ -75,7 +75,7 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
         listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/seamus3.mp4",icon));
         listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Seamus4.mp4",icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Good Goal","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/gaol9.mp4",icon));
+        //listOfItem.add(new Item("Tippreary VS Killkenny","Good Goal","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/gaol9.mp4",icon));
         listOfItem.addAll(getNotifications());
 
 
