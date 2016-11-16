@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +17,13 @@ import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import ienquire.ie.libfff.model.Clip;
+import ienquire.ie.libfff.util.FFFUtil;
 
 
 /**
@@ -30,7 +33,7 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
 
     SliderLayout mDemoSlider;
     ListView list;
-    Tracker mytracker;
+    //Tracker mytracker;
 
 
     public Points() {
@@ -59,21 +62,21 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
         listOfItem.add(new Item("Tippreary VS Killkenny","Patrick 'Bonnar' Maher","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/BonnarMehar1.mp4",icon));
 
 
-        listOfItem.add(new Item("Tippreary VS Killkenny"," Jhon 'Bubbles' O'Dwyer","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Bubbles.mp4",icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", " John 'Bubbles' O'Dwyer", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Bubbles.mp4", icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/SeamusCallanan1.mp4",icon));
+        //listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/SeamusCallanan1.mp4",icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Jhon O'Dwyer","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JohnODwyer1.mp4",icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", "John O'Dwyer", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JohnODwyer1.mp4", icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Json Forde","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JasonForde2.mp4",icon));
+        listOfItem.add(new Item("Tippreary VS Killkenny", "Jason Forde", "https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/JasonForde2.mp4", icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Noel Mc Grath","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/NoelMcGrath.mp4",icon));
 
         listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Seamus2.mp4",icon));
         listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/seamus3.mp4",icon));
         listOfItem.add(new Item("Tippreary VS Killkenny","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/Seamus4.mp4",icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Good Goal","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/gaol9.mp4",icon));
+        //listOfItem.add(new Item("Tippreary VS Killkenny","Good Goal","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/gaol9.mp4",icon));
+        listOfItem.addAll(getNotifications());
 
 
 //        listOfItem.add(new Item("Tippreary VS Killkenny","Good Goal","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/goal1.mp4",icon));
@@ -204,25 +207,39 @@ public class Points extends Fragment implements AdapterView.OnItemClickListener{
         startActivity(intent);
     }
 
+    private List<Item> getNotifications() {
+        Drawable icon = ContextCompat.getDrawable(getActivity(), R.drawable.tipp);
+        List<Item> items = new ArrayList<>();
+        List<Clip> clips = FFFUtil.returnListOfClips(getActivity());
+
+        for (Clip clip : clips) {
+            if (clip.getCategory().equals("Points")) {
+                items.add(new Item("Feed", clip.getMessage(), clip.getUrl(), icon));
+            }
+        }
+
+        return items;
+    }
+
     @Override
     public void onResume(){
         super.onResume();
 
         // Set title on Actionbar
         ((MainActivity) getActivity()).setActionBarTitle("Points");
-        mytracker.setScreenName("Screen Name is" + "Points");
-        mytracker.send(new HitBuilders.ScreenViewBuilder().build());
+        //mytracker.setScreenName("Screen Name is" + "Points");
+        //mytracker.send(new HitBuilders.ScreenViewBuilder().build());
 
     }
 
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
-        mytracker = application.getDefaultTracker();
-
-
-    }
+//
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//
+//        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
+//        mytracker = application.getDefaultTracker();
+//
+//
+//    }
 }

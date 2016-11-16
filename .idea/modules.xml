@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Tiprearry.iml" filepath="$PROJECT_DIR$/Tiprearry.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+<<<<<<< HEAD
+=======
+      <module fileurl="file://$PROJECT_DIR$/libfff/libfff.iml" filepath="$PROJECT_DIR$/libfff/libfff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tipperary_android.iml" filepath="$PROJECT_DIR$/tipperary_android.iml" />
+>>>>>>> cb68cca3fa53c5e1c38288252c40620bbd652b3d
     </modules>
   </component>
 </project>

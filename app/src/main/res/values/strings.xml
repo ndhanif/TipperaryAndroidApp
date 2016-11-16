@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">"Tipperary "</string>
+    <string name="app_name">Tipperary</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_text">Welcome to the mobile app specially designed for Tipperary hurling fans.This is truly a banquet and celebration of Tipperary hurling both past and present. Enjoy!</string>
 </resources>
