@@ -51,7 +51,7 @@ public class Goals extends Fragment implements AdapterView.OnItemClickListener{
         ListViewAdapter listViewAdapter = new ListViewAdapter(getActivity(), R.layout.item_layout, listOfItem);
         list.setAdapter(listViewAdapter);
 
-//        listOfItem.add(new Item("Tippreary","Jhon Mc Grath","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/JhonMcGrath1.mp4",icon));
+         listOfItem.add(new Item("Tippreary","Jhon Mc Grath","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/JhonMcGrath1.mp4",icon));
 //
 //        listOfItem.add(new Item("Tippreary","Jhon O'Dwyer","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/johnODwyer1.mp4",icon));
 //
@@ -74,9 +74,9 @@ public class Goals extends Fragment implements AdapterView.OnItemClickListener{
 //
 //
 //
-//        listOfItem.add(new Item("Tippreary","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/SeamusCallanan1.mp4",icon));
-//
-//        listOfItem.add(new Item("Tippreary","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/SeamusCallanan2.mp4",icon));
+          listOfItem.add(new Item("Tippreary","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/SeamusCallanan1.mp4",icon));
+
+          listOfItem.add(new Item("Tippreary","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/SeamusCallanan2.mp4",icon));
 //
 //        listOfItem.add(new Item("Tippreary","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/SeamusCallanan3.mp4",icon));
 //
@@ -88,17 +88,10 @@ public class Goals extends Fragment implements AdapterView.OnItemClickListener{
 //
 //        listOfItem.add(new Item("Tippreary","Seamus Callanan","https://s3-eu-west-1.amazonaws.com/hurlling/Tipp+app+content+Sept+2016/SeamusCallanan7.mp4",icon));
 
-        listOfItem.add(new Item("Tippreary VS Killkenny","Noel Mc Grath","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/NoelMcGrath.mp4",icon));
+         listOfItem.add(new Item("Tippreary VS Killkenny","Noel Mc Grath","https://s3-eu-west-1.amazonaws.com/hurlling/Tippreary+VS+Killkenny+updated+videos/NoelMcGrath.mp4",icon));
 
 
         list.setOnItemClickListener(this);
-
-
-
-
-
-
-
         HashMap<String,String> url_maps = new HashMap<String, String>();
         url_maps.put("Goal1", "http://www.rappstars.com/images/hurling2.jpg");
         url_maps.put("Goal2", "http://kclr96fm.com/media/2015/04/hurling-stock-images.png");
